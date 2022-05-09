@@ -1,4 +1,4 @@
-const keys = document.querySelectorAll("[key]");
+const keys = document.querySelectorAll("[keys]");
 
 const result = document.querySelector("#result");
 const equal = document.querySelector("[button='equal']");
