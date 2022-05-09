@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* theme one colors */
+  --one-main-background: hsl(222, 26%, 31%);
+  --one-toggle-and-keypad-background: hsl(223, 31%, 20%);
+  --one-screen-background: hsl(224, 36%, 15%);
+  --one-blue-key-background: hsl(225, 21%, 49%);
+  --one-blue-key-shadow: hsl(224, 28%, 35%);
+  --one-red-toggle-and-key-background: hsl(6, 63%, 50%);
+  --one-red-key-shadow: hsl(6, 70%, 34%);
+  --one-key-background: hsl(30, 25%, 89%);
+  --one-key-shadow: hsl(28, 16%, 65%);
+  --one-text-color: hsl(221, 14%, 31%);
+  /* theme two colors */
+  --two-main-background: hsl(0, 0%, 90%);
+  --two-toggle-and-keypad-background: hsl(0, 5%, 81%);
+  --two-screen-background: hsl(0, 0%, 93%);
+  --two-cyan-key-background: hsl(185, 42%, 37%);
+  --two-cyan-key-shadow: hsl(185, 58%, 25%);
+  --two-orange-toggle-and-key-background: hsl(25, 98%, 40%);
+  --two-orange-key-shadow: hsl(25, 99%, 27%);
+  --two-key-background: hsl(45, 7%, 89%);
+  --two-key-shadow: hsl(35, 11%, 61%);
+  --two-text-color: hsl(60, 10%, 19%);
+  /* theme three colors*/
+  --three-main-background: hsl(268, 75%, 9%);
+  --three-toggle-and-keypad-and-screen-background: hsl(268, 71%, 12%);
+  --three-violet-key-background: hsl(281, 89%, 26%);
+  --three-magenta-key-shadow: hsl(285, 91%, 52%);
+  --three-pure-cyan-toggle-and-key-background: hsl(176, 100%, 44%);
+  --three-soft-cyan-key-shadow: hsl(177, 92%, 70%);
+  --three-key-background: hsl(268, 47%, 21%);
+  --three-key-shadow: hsl(290, 70%, 36%);
+  --three-text-color-yellow: hsl(52, 100%, 62%);
+  --three-text-color-blue: hsl(198, 20%, 13%);
+
+  font-family: "League Spartan", sans-serif;
+}
+
+body {
+  background: var(--one-main-background);
+  transition: 0.3s;
+}
+
+.calculator {
+  width: 550px;
+  margin: 0px auto;
+}
+.top {
+  color: white;
+  display: grid;
+  grid-template-columns: auto 150px;
+  padding-top: 25px;
+  grid-row-end: auto;
+}
+.top h1 {
+  display: grid;
+  font-size: 35px;
+  font-weight: 500;
+  align-content: end;
+}
+.toggle {
+  display: grid;
+  grid-template-columns: 60px auto;
+  place-items: end;
+}
+.toggle div ul {
+  display: flex;
+  margin-left: 5px;
+  padding-bottom: 3px;
+}
+.toggle div ul li {
+  cursor: pointer;
+  list-style: none;
+  margin-right: 18px;
+  transition: 0.5s;
+}
+.toggle div ul li:hover {
+  color: red;
+}
+.toggle p {
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 14px;
+  line-height: 18px;
+}
+.toggle .switch {
+  padding: 4px;
+  border-radius: 15px;
+  width: 70px;
+  height: 23px;
+  background: var(--one-toggle-and-keypad-background);
+}
+.switch .ball {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: var(--one-red-toggle-and-key-background);
+  transition: all 0.3s;
+  /*translateX (22px 46px) */
+}
+.result {
+  width: 100%;
+  height: 130px;
+  background: var(--one-screen-background);
+  border-radius: 10px;
+  margin-top: 32px;
+  display: grid;
+  padding: 10px;
+}
+#result {
+  width: 100%;
+  height: 100%;
+  background: local;
+  border: none;
+  display: grid;
+  color: white;
+  font-size: 60px;
+  text-align: right;
+  padding: 30px;
+  align-items: center;
+  overflow-x: scroll;
+}
+#result::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+.keypad {
+  border-radius: 10px;
+  background: var(--one-toggle-and-keypad-background);
+  width: 100%;
+  padding: 28px 15px;
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(4, 3fr);
+  row-gap: 24px;
+  place-items: center;
+}
+.keypad h1 {
+  cursor: pointer;
+  font-size: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  height: 64px;
+  width: 100px;
+  background: var(--one-key-background);
+  color: var(--one-text-color);
+  box-shadow: 0px 5px 0px var(--one-key-shadow);
+}
+.keypad h1[button="reset"],
+.keypad h1[button="del"] {
+  box-shadow: 0px 5px 0px var(--one-blue-key-shadow);
+  background: var(--one-blue-key-background);
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+.keypad h1[button="reset"] {
+  width: 230px;
+  grid-column: 1/3;
+}
+.keypad h1[button="equal"] {
+  color: white;
+  background: var(--one-red-toggle-and-key-background);
+  box-shadow: 0px 5px 0px var(--one-red-key-shadow);
+  width: 230px;
+  font-size: 25px;
+  font-weight: 500;
+  grid-column: 3/5;
+}
+.keypad h1:active {
+  transform: translateY(5px);
+  box-shadow: none;
+}
+.attribution {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 16px;
+  color: antiquewhite;
+  padding-bottom: 20px;
+}
+.attribution a {
+  text-decoration: none;
+  color: hsl(1, 89%, 65%);
+  transition: 0.2s;
+}
+.attribution a:hover {
+  color: white;
+}
+/*  */
+/*  */
+/* Theme two styles */
+.theme-two {
+  background: var(--two-main-background);
+}
+.theme-two .top {
+  color: var(--two-text-color);
+}
+.theme-two .toggle .switch {
+  background: var(--two-toggle-and-keypad-background);
+}
+.theme-two .switch .ball {
+  background: var(--two-orange-toggle-and-key-background);
+  transform: translateX(22px);
+}
+.theme-two #result {
+  color: var(--two-text-color);
+}
+.theme-two .keypad {
+  background: var(--two-toggle-and-keypad-background);
+}
+.theme-two .keypad h1 {
+  background: var(--two-key-background);
+  color: var(--two-text-color);
+  box-shadow: 0px 5px 0px var(--two-key-shadow);
+}
+.theme-two .keypad h1[button="reset"],
+.theme-two .keypad h1[button="del"] {
+  box-shadow: 0px 5px 0px var(--two-cyan-key-shadow);
+  background: var(--two-cyan-key-background);
+}
+.theme-two .keypad h1[button="equal"] {
+  background: var(--two-orange-toggle-and-key-background);
+  box-shadow: 0px 5px 0px var(--two-orange-key-shadow);
+}
+.theme-two .result {
+  background: var(--two-screen-background);
+}
+.theme-two #result::placeholder {
+  color: hsla(60, 10%, 19%, 0.3);
+}
+.theme-two .attribution {
+  color: var(--two-text-color);
+}
+.theme-two .attribution a:hover {
+  color: var(--two-orange-toggle-and-key-background);
+}
+/*  */
+/*  */
+/* Theme three styles */
+.theme-three {
+  background: var(--three-main-background);
+}
+.theme-three .top {
+  color: var(--three-text-color-yellow);
+}
+.theme-three .toggle .switch {
+  background: var(--three-toggle-and-keypad-and-screen-background);
+}
+.theme-three .switch .ball {
+  background: var(--three-pure-cyan-toggle-and-key-background);
+  transform: translateX(46px);
+}
+.theme-three #result {
+  color: var(--three-text-color-yellow);
+}
+.theme-three .keypad {
+  background: var(--three-toggle-and-keypad-and-screen-background);
+}
+.theme-three .keypad h1 {
+  background: var(--three-key-background);
+  color: var(--three-text-color-yellow);
+  box-shadow: 0px 5px 0px var(--three-key-shadow);
+}
+.theme-three .keypad h1[button="reset"],
+.theme-three .keypad h1[button="del"] {
+  background: var(--three-violet-key-background);
+  box-shadow: 0px 5px 0px var(--three-magenta-key-shadow);
+}
+.theme-three .keypad h1[button="equal"] {
+  color: var(--three-text-color-blue);
+  background: var(--three-pure-cyan-toggle-and-key-background);
+  box-shadow: 0px 5px 0px var(--three-soft-cyan-key-shadow);
+}
+.theme-three .result {
+  background: var(--three-toggle-and-keypad-and-screen-background);
+}
+.theme-three #result::placeholder {
+  color: hsla(52, 100%, 62%, 0.3);
+}
+.theme-three .attribution {
+  color: var(--three-text-color-yellow);
+}
+.theme-three .attribution a {
+  color: var(--three-pure-cyan-toggle-and-key-background);
+}
+.theme-three .attribution a:hover {
+  color: var(--three-violet-key-background);
+}
+
+@media screen and (min-width: 375px) and (max-width: 580px) {
+  .calculator {
+    width: 330px;
+  }
+  .keypad h1 {
+    width: 60px;
+    height: 60px;
+  }
+  .keypad h1[button="reset"],
+  .keypad h1[button="equal"] {
+    width: 130px;
+    height: 60px;
+  }
+  .attribution {
+    font-size: 13px;
+  }
+  .result {
+    height: 90px;
+  }
+  #result {
+    font-size: 40px;
+  }
+}
