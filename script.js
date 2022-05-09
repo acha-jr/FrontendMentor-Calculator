@@ -39,7 +39,7 @@ equal.addEventListener("click", () => {
   }
 });
 
-// const body = document.getElementsByTagName("body");
+//toggle theme
 const themeOne = document.getElementById("one");
 const themeTwo = document.getElementById("two");
 const themeThree = document.getElementById("three");
