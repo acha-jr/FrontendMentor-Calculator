@@ -6,6 +6,7 @@ const del = document.querySelector("[button='del']");
 const clear = document.querySelector("[button='reset']");
 
 const multiply = document.querySelector("[button='multiply']");
+const decimal = document.querySelector("[button='point']");
 
 //display text when clicked on
 keys.forEach((e) => {
@@ -18,6 +19,12 @@ keys.forEach((e) => {
 let displayMult = "*";
 multiply.addEventListener("click", () => {
   result.value += displayMult;
+});
+
+//displays "0." instead of "."
+let zeroDecimal = "0.";
+decimal.addEventListener("click", () => {
+  result.value += zeroDecimal;
 });
 
 //remove the last digit of the input
