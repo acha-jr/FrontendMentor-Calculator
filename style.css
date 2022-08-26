@@ -101,7 +101,6 @@ body {
   border-radius: 50%;
   background: var(--one-red-toggle-and-key-background);
   transition: all 0.3s;
-  /*translateX (22px 46px) */
 }
 .result {
   width: 100%;
@@ -172,6 +171,8 @@ body {
   font-weight: 500;
   grid-column: 3/5;
 }
+.theme-two .keypad h1:active,
+.theme-three .keypad h1:active,
 .keypad h1:active {
   transform: translateY(5px);
   box-shadow: none;
