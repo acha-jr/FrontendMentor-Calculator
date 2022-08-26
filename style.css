@@ -224,9 +224,16 @@ body {
   box-shadow: 0px 5px 0px var(--two-cyan-key-shadow);
   background: var(--two-cyan-key-background);
 }
+.theme-two .keypad h1[button="reset"]:active,
+.theme-two .keypad h1[button="del"]:active {
+  box-shadow: none;
+}
 .theme-two .keypad h1[button="equal"] {
   background: var(--two-orange-toggle-and-key-background);
   box-shadow: 0px 5px 0px var(--two-orange-key-shadow);
+}
+.theme-two .keypad h1[button="equal"]:active {
+  box-shadow: none;
 }
 .theme-two .result {
   background: var(--two-screen-background);
@@ -272,10 +279,17 @@ body {
   background: var(--three-violet-key-background);
   box-shadow: 0px 5px 0px var(--three-magenta-key-shadow);
 }
+.theme-three .keypad h1[button="reset"]:active,
+.theme-three .keypad h1[button="del"]:active {
+  box-shadow: none;
+}
 .theme-three .keypad h1[button="equal"] {
   color: var(--three-text-color-blue);
   background: var(--three-pure-cyan-toggle-and-key-background);
   box-shadow: 0px 5px 0px var(--three-soft-cyan-key-shadow);
+}
+.theme-three .keypad h1[button="equal"]:active {
+  box-shadow: none;
 }
 .theme-three .result {
   background: var(--three-toggle-and-keypad-and-screen-background);
